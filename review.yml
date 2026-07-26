@@ -1,0 +1,313 @@
+aid: teranet
+name: Teranet
+review:
+  question: >-
+    Does Teranet publish a reachable, documented public API surface for its land registry and property
+    data products, and what is its RESO posture?
+  answer: false
+  date: '2026-07-26'
+  reviewer: API Evangelist
+  homeMarket: Canada
+  tier: land-registry-govt
+  summary: >-
+    Teranet has exactly one product it calls an API — Teranet Connect — and it is licensed commercially
+    to legal-software vendors through an account manager. There is no developer portal, no public
+    documentation, no published base URL, no sandbox, no SDKs, no webhooks and no machine-readable
+    contract of any kind. Teranet's own commercial-solutions support site states that GeoWarehouse "does
+    not offer an open Application Programming Interface (API) that can be accessed by the general public
+    or utilized within the industry." No RESO reference or certification was found anywhere in Teranet's
+    properties; Teranet is a land registry operator, not an MLS. Nothing was harvested into openapi/.
+
+sectorBlock:
+  resoPosture:
+    certified: false
+    posture: >-
+      No RESO certification found. Teranet is a land registry operator, not an MLS or listing
+      distributor, and RESO is a US-originated, NAR-adjacent standards regime that does not govern
+      Canadian land registration. No RESO Web API certification, no RESO Data Dictionary certification,
+      no Data Dictionary version, no OData/Reso endpoint, no $metadata document and no Universal Property
+      Identifier (UPI) reference appears on teranet.ca, teraview.ca, onland.ca, geowarehouse.ca,
+      purview.ca, teranetmanitoba.ca or thenewrealm.ca.
+    dataDictionaryVersion: null
+    webApiCertification: null
+    upiReference: false
+    metadataDocument: null
+    directoryEvidence: >-
+      The RESO certification/endorsements directory at https://certification.reso.org/ returned HTTP 400
+      to every anonymous request, including with a browser User-Agent, so it could not be read
+      programmatically. https://www.reso.org/certificates/ returned HTTP 200 but is a JavaScript-rendered
+      listing whose HTML contains no occurrence of "Teranet", "PropTx" or "TRREB".
+      https://www.reso.org/certified-organizations/ and https://www.reso.org/reso-certification/ both
+      returned HTTP 404. No positive evidence of a Teranet listing was found, and no evidence of absence
+      could be obtained from the directory itself; the finding rests on the total absence of any RESO
+      claim across Teranet's own web properties.
+    adjacentEvidence: >-
+      Teranet co-developed the REALM multi-list platform with Stratus Data Systems / AMP Systems and
+      TRREB (2021 press release), and REALMiQ with Amplify, PropTx and Teranet. Press coverage describes
+      REALM as having a "RESO compliant back-end", but https://thenewrealm.ca/about-us/ (HTTP 200)
+      contains no mention of RESO, Web API, IDX, VOW or developer access. The RESO Web API feed serving
+      Ontario board listings is operated by PropTx (a wholly owned TRREB subsidiary), not by Teranet:
+      https://query.ampre.ca/odata/$metadata returned HTTP 401 with an empty body — the endpoint exists
+      but is unreachable without an MLS data agreement. That is a PropTx/TRREB fact, recorded here only
+      as market context; it is not a Teranet certification and must not be attributed to Teranet.
+    sectorSeam: >-
+      Canada has no US-style MLS fragmentation. Residential listings run through CREA's national
+      Data Distribution Facility and REALTOR.ca, and CREA is the body driving Canadian boards from the
+      legacy National Data Standard toward RESO. Land registration, by contrast, is provincial and in
+      Ontario and Manitoba is privatised to Teranet — so the two data estates are governed by entirely
+      different regimes and the RESO question simply does not reach Teranet's core business.
+  accessGate:
+    gate: partner-only
+    whatADeveloperMustDo: >-
+      There is no signup. Teranet Connect is licensed to "legal document creation and legal document
+      management software vendors" — a negotiated commercial licence obtained by contacting a Teranet
+      account manager (info@teranet.ca, 416-360-5263). Every other data product (Teranet Xchange
+      streaming/direct delivery, DataConnect, GeoWarehouse, PurView, Title Data, Ontario Parcel,
+      TeraIntelligence) is likewise sold through an account manager under a commercial data licence.
+      Teraview and Teranet eXpress additionally require a registered Ontario ELRS/Teraview account, which
+      for registration privileges means a licensed practitioner (typically a lawyer) with a Personal
+      Security Package. There is no free tier, no trial, no sandbox and no public key issuance anywhere.
+    selfServeSignup: false
+    developerPortal: null
+    developerPortalProbes: >-
+      developer.teranet.ca, developers.teranet.ca, api.teranet.ca, docs.teranet.ca and dev.teranet.ca all
+      failed to resolve/connect (curl exit code 000, no HTTP response). www.teranet.ca/developers,
+      /api and /docs each 302-redirect to the homepage (final HTTP 200 at https://www.teranet.ca/) — the
+      WordPress site soft-404s unknown paths, so these are absences, not pages. The published sitemap
+      (https://www.teranet.ca/page-sitemap.xml, HTTP 200) lists no developer, API or documentation page.
+  openData:
+    open: false
+    finding: >-
+      A privatised registry selling the public record back to the public is the finding. Ontario's
+      authoritative land title, parcel and writ data lives in POLARIS, a Crown database, but access is
+      metered and priced through Teranet's Teraview, OnLand, Teranet eXpress and Teranet Xchange
+      products under a concession running to the 2060s. None of it is available as an open dataset, an
+      open licence, a bulk open download or a publicly callable endpoint.
+    nearestThingToOpen: >-
+      The Teranet-National Bank House Price Index (https://housepriceindex.ca/, HTTP 200) publishes the
+      Composite 11 index monthly and offers a free historical data download at
+      https://housepriceindex.ca/index-history/ (HTTP 200). This is NOT open data: the download page
+      states "Your use of the Teranet-National Bank House Price Index data or statistics and all other
+      information, data, other materials available by way of the Site (the 'Materials') is subject to
+      these Terms of Use... If you do not agree with the Terms of Use, you must cancel this download."
+      The public solutions page adds "Teranet and National Bank of Canada offer licenses covering all
+      index-linked products." The Composite 6 index was withdrawn from public download after 13 March
+      2019. Sub-indices below C11 (FSA/neighbourhood level) are a paid commercial product.
+    incidentalPublicEndpoint: >-
+      https://housepriceindex.ca/wp-json/ is a WordPress core REST API exposed by the marketing site's
+      CMS. It is incidental site infrastructure, not a Teranet product API, and is deliberately NOT
+      listed in apis.yml.
+  authModel:
+    schemes: >-
+      Nothing is publicly documented. Teranet Connect is described only as "XML and Web services
+      interfaces as well as standardized rules-based routing of information" with no auth scheme stated.
+      Teraview access uses a Teranet-issued account plus a Personal Security Package (PKI-based
+      credentials) for registration privileges; OnLand, GeoWarehouse and PurView are username/password
+      web applications behind subscription accounts. No API key, OAuth 2.0, OpenID Connect or SAML
+      developer flow is published anywhere.
+    openidConfiguration: >-
+      https://www.teranet.ca/.well-known/openid-configuration returned HTTP 200 but with
+      content-type text/html — it is the WordPress soft-404 page, not an OIDC discovery document. No
+      OpenID Provider metadata is served.
+  homeMarket: Canada
+  valueChainPosition: >-
+    Base-layer registry and record-of-truth operator. Teranet holds the authoritative Ontario and
+    Manitoba land record and licenses derivatives of it upward into legal/conveyancing software, lender
+    and appraisal workflows (PurView, DataConnect, ValueProtect AVM), brokerage tools (GeoWarehouse), MLS
+    platforms it co-built (REALM/REALMiQ with TRREB's PropTx) and capital markets (Teranet-National Bank
+    HPI). It competes with nobody for the registry itself; it is a monopoly concession.
+
+findings:
+  documentedApis:
+    - name: Teranet Connect
+      url: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
+      httpStatus: 200
+      selfDescribedAsApi: true
+      quote: >-
+        Teranet describes it as "an application programming interface (API)" providing secure access to
+        Ontario's POLARIS database and the Writs database, using "XML and Web services interfaces as well
+        as standardized rules-based routing of information", licensed by "legal document creation and
+        legal document management software vendors".
+      baseURLPublished: false
+      documentationPublished: false
+      accessRoute: Contact an account manager (info@teranet.ca / 416-360-5263)
+  dataProductsWithoutApiDocumentation:
+    - name: Teranet Xchange
+      url: https://www.teranet.ca/geospatial-solutions/teranet-xchange/
+      httpStatus: 200
+      note: >-
+        Offers a "Streaming Service that fully integrates spatial, parcel, title data, and more in
+        real-time" and a "Direct Delivery service" of flat files and plan images. No API, WMS/WFS, OGC or
+        licensing detail is published; access is via account manager. Not listed in apis.yml because no
+        API is documented.
+    - name: DataConnect (incl. ValueProtect AVM)
+      url: https://www.teranet.ca/financial-solutions/dataconnect/
+      httpStatus: 200
+      note: Zero API, feed or integration language on the page; sales-contact only.
+    - name: GeoWarehouse
+      url: https://www2.geowarehouse.ca/
+      httpStatus: 200
+      note: Explicitly has no open API (see explicitNoApiEvidence).
+    - name: PurView
+      url: https://www.purview.ca/
+      httpStatus: 200
+      note: Subscription web application for lenders/appraisers; no developer surface.
+    - name: Title Data / Ontario Parcel
+      url: https://www.teranet.ca/geospatial-solutions/ontario-parcel/
+      httpStatus: 200
+      note: Commercially licensed geospatial products, not open data.
+    - name: TeraIntelligence
+      url: https://teraintelligence.teranet.ca/
+      httpStatus: 200
+      note: Analytics portal; no developer surface published.
+  explicitNoApiEvidence:
+    url: https://teranetcommercialsolutions.zendesk.com/hc/en-ca/articles/34795786037389-Does-Geowarehouse-have-an-open-API
+    httpStatus: 200
+    fetched: '2026-07-26'
+    quote: >-
+      "Currently, GeoWarehouse does not offer an open Application Programming Interface (API) that can be
+      accessed by the general public or utilized within the industry."
+  webhooksEventsSdksPostman:
+    webhooks: none found
+    events: none found
+    sdks: none found
+    postman: >-
+      https://www.postman.com/teranet returned HTTP 200, but that is the Postman single-page app shell
+      and is not evidence of a public workspace; no Teranet workspace was confirmed.
+    githubOrganization: >-
+      Not confirmed. https://github.com/teranet returned HTTP 200 but the GitHub REST API was rate-limited
+      (HTTP 403) for this host, so org identity could not be verified; no GitHub org is claimed in apis.yml.
+  machineReadableContractProbes:
+    - url: https://www.teranet.ca/openapi.json
+      status: 200
+      result: HTML soft-404 page, not JSON. Not a spec.
+    - url: https://www.teranet.ca/swagger.json
+      status: 200
+      result: HTML soft-404 page, not JSON. Not a spec.
+    - url: https://www.onland.ca/api-docs
+      status: 403
+      result: >-
+        application/json body {"timestamp":"2026-07-26T22:57:18.250Z","status":403,"error":"Forbidden",
+        "path":"/api-docs"} from a Spring-style backend. An internal endpoint exists but is forbidden
+        anonymously; no contract retrievable.
+    - url: https://www.onland.ca/openapi.json
+      status: 503
+    - url: https://www.onland.ca/swagger.json
+      status: 503
+    - url: https://www.onland.ca/v3/api-docs
+      status: 503
+    - url: https://www2.geowarehouse.ca/openapi.json
+      status: 200
+      result: HTML application shell, not JSON.
+    - url: https://www.teraview.ca/openapi.json
+      status: 404
+    - url: https://thenewrealm.ca/openapi.json
+      status: 404
+    - url: https://housepriceindex.ca/openapi.json
+      status: 404
+    - url: https://www.teranetmanitoba.ca/api
+      status: 404
+    - url: https://www.teranetmanitoba.ca/developers
+      status: 404
+    - url: https://query.ampre.ca/odata/$metadata
+      status: 401
+      result: >-
+        PropTx/TRREB RESO OData endpoint (not Teranet) — exists, empty body, requires an MLS data
+        agreement. Recorded as market context only.
+  specsHarvested: 0
+  openapiDirectory: none — nothing real was found to save
+
+sources:
+  - url: https://www.teranet.ca/
+    status: 200
+    type: Website
+    note: Corporate homepage; solutions taxonomy (Registry, Real Estate, Financial, Legal, Geospatial, Data & Analytics). No developer or API navigation.
+  - url: https://www.teranet.ca/about-teranet/
+    status: 200
+    type: About
+    note: >-
+      "Canada's leader in the delivery and transformation of statutory registry services"; founded 1991;
+      Toronto HQ at 123 Front Street West; 850+ employees; states Teranet is wholly owned by OMERS.
+  - url: https://www.teranet.ca/registry-solutions/province-of-ontario/
+    status: 200
+    type: Documentation
+    note: Ontario ELRS partnership; Teraview, OnLand, Teranet eXpress, POLARIS. No contract term stated on the page.
+  - url: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
+    status: 200
+    type: Documentation
+    note: The one page where Teranet self-describes an API product.
+  - url: https://www.teranet.ca/registry-solutions/province-of-manitoba/
+    status: 200
+    type: Documentation
+  - url: https://www.teranet.ca/geospatial-solutions/teranet-xchange/
+    status: 200
+    type: Documentation
+  - url: https://www.teranet.ca/financial-solutions/dataconnect/
+    status: 200
+    type: Documentation
+  - url: https://www.teranet.ca/real-estate-solutions/
+    status: 200
+    type: Documentation
+    note: >-
+      The only "API" word on any solutions page belongs to partner HoodQ — reports "delivered via API, SDK
+      and Widget format" — which is HoodQ's surface, not Teranet's.
+  - url: https://teranetcommercialsolutions.zendesk.com/hc/en-ca/articles/34795786037389-Does-Geowarehouse-have-an-open-API
+    status: 200
+    type: Support
+    note: Teranet support article stating GeoWarehouse has no open API.
+  - url: https://www2.geowarehouse.ca/faqs-for-geowarehouse/
+    status: 200
+    type: Support
+  - url: https://www.onland.ca/
+    status: 200
+    type: Application
+    note: Redirects to /ui; public Ontario land registry search-and-purchase application.
+  - url: https://www.teraview.ca/en/
+    status: 200
+    type: Application
+  - url: https://www.teranetexpress.ca/
+    status: 200
+    type: Application
+    note: Redirects to /csp/.
+  - url: https://www.purview.ca/
+    status: 200
+    type: Application
+  - url: https://www.teranetmanitoba.ca/
+    status: 200
+    type: Website
+  - url: https://www.fostermoore.com/
+    status: 200
+    type: Website
+    note: Foster Moore, Teranet's international registry-software subsidiary. /api and /developers both 404.
+  - url: https://housepriceindex.ca/
+    status: 200
+    type: Data
+    note: Teranet-National Bank House Price Index; free C11 download under Terms of Use, not an open licence.
+  - url: https://housepriceindex.ca/index-history/
+    status: 200
+    type: Data
+  - url: https://housepriceindex.ca/solutions/public-solutions/
+    status: 200
+    type: Data
+  - url: https://thenewrealm.ca/about-us/
+    status: 200
+    type: Documentation
+    note: REALM co-developed by Teranet with Stratus/AMP and TRREB's PropTx; no RESO or API language on the page.
+  - url: https://www.teranet.ca/page-sitemap.xml
+    status: 200
+    type: Sitemap
+    note: Full page inventory — contains no developer, API or docs page.
+
+actions:
+  apisYmlCreated: true
+  apisListed: 1
+  readmeCreated: true
+  openapiHarvested: false
+  specsCount: 0
+  imageSource: >-
+    Real Teranet brand icon found trivially in the homepage <link rel="icon"> tag
+    (https://www.teranet.ca/wp-content/uploads/2021/12/cropped-teranet_favicon_512_512-192x192.png,
+    HTTP 200, image/png, 6,749 bytes), used instead of the shared placeholder.
+  nothingFabricated: >-
+    No base URL, endpoint, scope, spec or auth scheme was invented. Teranet Connect is listed with no
+    baseURL because none is published anywhere.

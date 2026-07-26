@@ -1,0 +1,78 @@
+aid: teranet
+url: https://raw.githubusercontent.com/api-evangelist/teranet/refs/heads/main/apis.yml
+name: Teranet
+kind: company
+description: >-
+  Teranet Inc. is the private operator of Ontario's Electronic Land Registration System (ELRS) and the
+  POLARIS land records database under a long-running concession with the Government of Ontario, and is
+  the exclusive service provider for Manitoba's Land Titles System and Personal Property Registry. Founded
+  in 1991, headquartered in Toronto and wholly owned by OMERS, Teranet sits at the base of the Canadian
+  property value chain: it holds the authoritative title, parcel, writ and instrument record and resells
+  it as commercial products — Teraview, OnLand, Teranet eXpress, GeoWarehouse, PurView, Teranet Xchange,
+  DataConnect/ValueProtect AVM, TeraIntelligence — plus the Teranet-National Bank House Price Index. Its
+  API posture is licensed access only. Teranet Connect is genuinely described by Teranet as an API (XML
+  and web services over POLARIS and the Writs database), but it is licensed to legal-software vendors
+  through an account manager, with no public documentation, no published base URL, no self-serve signup
+  and no developer portal; Teranet's own support site states plainly that GeoWarehouse has no open API.
+  No RESO certification was found — Teranet is a land registry, not an MLS — and the public record it
+  stewards is sold back rather than published as open data.
+image: https://www.teranet.ca/wp-content/uploads/2021/12/cropped-teranet_favicon_512_512-192x192.png
+tags:
+- Real Estate
+- Canada
+- Land Registry
+- Title
+- Conveyancing
+- Property Data
+- Valuation
+- AVM
+- PropTech
+- Government
+- Geospatial
+created: '2026-07-26'
+modified: '2026-07-26'
+specificationVersion: '0.19'
+apis:
+- aid: teranet:teranet-connect
+  name: Teranet Connect
+  description: >-
+    Teranet Connect is described by Teranet as an application programming interface providing secure
+    access to Ontario's POLARIS land registration database and the Writs database, using XML and web
+    services interfaces with rules-based routing. It lets legal document creation and management software
+    vendors embed property search (by name, address or PIN), writ search by debtor name, instrument image
+    retrieval and map data into their own applications. Access is licensed commercially through a Teranet
+    account manager; no public technical documentation, base URL, sandbox or self-serve signup is published.
+  humanURL: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
+  tags:
+  - Land Registry
+  - Title
+  - Conveyancing
+  - Ontario
+  - Writs
+  properties:
+  - type: Documentation
+    url: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
+  - type: Website
+    url: https://www.teranet.ca/registry-solutions/province-of-ontario/
+common:
+- type: Website
+  url: https://www.teranet.ca/
+- type: About
+  url: https://www.teranet.ca/about-teranet/
+- type: Contact
+  url: https://www.teranet.ca/contact-us/
+- type: Blog
+  url: https://www.teranet.ca/insights/
+- type: PressReleases
+  url: https://www.teranet.ca/press-releases/
+- type: TermsOfService
+  url: https://www.teranet.ca/terms-conditions/
+- type: PrivacyPolicy
+  url: https://www.teranet.ca/privacy/
+- type: LegalNotice
+  url: https://www.teranet.ca/legal-notice/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/teranet
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
