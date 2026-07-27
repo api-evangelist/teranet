@@ -1,0 +1,59 @@
+generated: '2026-07-26'
+method: searched
+source: https://www.teraview.ca/en/teraview-training-environment/
+summary: >-
+  Teranet publishes a genuine non-production training environment for Teraview, the electronic
+  land registration client — a separate host from production with a published shared password, so
+  a conveyancer can practise docket creation, property and map search, instrument creation, signing
+  and registration without touching the live registry. This is a UI training sandbox for the
+  Teraview application, NOT a developer sandbox: there is no test API endpoint, no sandbox API key,
+  no test-vs-live key prefix scheme and no fixture or trigger tooling for Teranet Connect. A
+  vendor integrating Teranet Connect obtains test access through its licence agreement and account
+  manager, not from a public sandbox.
+applies_to:
+- Teraview (electronic land registration client)
+scope: ui-training-environment
+developer_sandbox: false
+environments:
+- name: training
+  url: https://www.teraviewtraining.ca
+  probe_status: 503
+  probe_note: >-
+    Returns HTTP 503 to anonymous requests from outside the expected access path (WAF / access
+    control). The URL is published verbatim by Teranet on the training-environment page.
+  separate_from_production: true
+- name: production
+  url: https://www.teraviewereg.ca/TvApp/Login.jsp
+  probe_status: 503
+  probe_note: Returns HTTP 503 to anonymous requests; reachable to licensed Teraview users.
+test_credentials:
+  note: >-
+    Published verbatim by Teranet. Reproduced here exactly as documented; no values were invented.
+  account_name: your existing production Account Name
+  user_name: your existing production User Name
+  password: TVereg_2017
+  rsa_token_pin: any six numbers
+  source: https://www.teraview.ca/en/teraview-training-environment/
+capabilities_exercisable:
+- docket creation
+- property search
+- map search
+- instrument creation
+- instrument signing
+- instrument registration
+- account management
+test_data:
+  magic_values: []
+  test_cards: []
+  test_pins: []
+  note: >-
+    No magic test identifiers, test PINs (Property Identification Numbers), test parcels or sample
+    payloads are published. The training environment carries its own data set that is only visible
+    after authenticated login.
+test_clock: false
+fixtures: false
+triggers: false
+key_prefixes: []
+related:
+- https://www.teraview.ca/en/teraview-video-guides/
+- https://www.teraview.ca/en/system-requirements/

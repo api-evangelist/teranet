@@ -1,0 +1,69 @@
+generated: '2026-07-26'
+method: searched
+source: https://www.teraview.ca/en/teraview-training-environment/
+docs: https://www.teraview.ca/en/become-a-teraview-user/
+summary:
+  types:
+  - proprietary-account
+  - hardware-otp
+  api_key_in: []
+  oauth2_flows: []
+  openapi_derived: false
+  note: >-
+    Derived mechanically from OpenAPI is impossible here — Teranet publishes no OpenAPI, Swagger or
+    any other machine-readable contract, so this profile is searched from documentation only. There
+    are no securitySchemes to aggregate.
+model: >-
+  Teranet authenticates people and licensed organizations, not applications. Access to every
+  Teranet surface — Teraview, OnLand, GeoWarehouse, Teranet eXpress and the Teranet Connect API —
+  is gated on a commercial account that must be established before any credential exists. There is
+  no self-serve credential issuance, no API key console, no OAuth authorization server, no OIDC
+  discovery document and no public token endpoint. This is the defining characteristic of Teranet's
+  API posture: the authentication barrier is contractual before it is technical.
+schemes:
+- name: Teraview account
+  type: proprietary
+  description: >-
+    Account Name plus User Name plus password. The Account Name identifies the licensed
+    organization (a law firm or vendor); the User Name identifies the individual within it. Both
+    are issued by Teranet at account setup, not chosen self-serve.
+  factors:
+  - account name
+  - user name
+  - password
+  source: https://www.teraview.ca/en/teraview-training-environment/
+- name: RSA hardware token
+  type: otp
+  description: >-
+    A second factor supplied by an RSA token with a user-set PIN, required for production
+    Teraview access. In the published training environment any six digits are accepted as the PIN.
+  source: https://www.teraview.ca/en/teraview-training-environment/
+- name: Email-based sign-in with enhanced MFA
+  type: proprietary
+  status: rolling-out
+  description: >-
+    Announced 2026-07-20 as an enhancement to the Teraview sign-in experience: email-based login
+    replacing the Account Name / User Name pair, with Multi-Factor Authentication enhancements.
+    Supersedes the RSA-token model over time.
+  source: https://www.teraview.ca/en/2026/
+- name: Teranet Connect licensed integration
+  type: proprietary
+  applies_to: teranet:teranet-connect
+  description: >-
+    Teranet Connect is described by Teranet as providing "secure access" over XML and Web services
+    interfaces, but the credential model is not documented publicly. Access is granted only under a
+    licence agreement negotiated with a Teranet account manager, and transactions are billed
+    against the licensee's existing Teraview Deposit Account — meaning the Deposit Account is the
+    effective identity and billing principal for API calls.
+  self_serve: false
+  contact: info@teranet.ca
+  source: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
+absent:
+  oauth2: true
+  openid_connect: true
+  api_keys: true
+  mutual_tls: unknown
+  jwt: unknown
+  note: >-
+    "absent" here means not publicly documented. Teranet may operate any of these behind the
+    licence gate; nothing in the public record evidences them, and nothing has been assumed.

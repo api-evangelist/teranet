@@ -1,0 +1,94 @@
+generated: '2026-07-26'
+method: probed
+source: live HTTPS probes of every Teranet-operated host in apis.yml
+summary: >-
+  No /.well-known/ discovery surface is published on any Teranet host. Every probed path on
+  www.teranet.ca, teranet.ca and www.purview.ca returned HTTP 200 with a WordPress soft-404 HTML
+  page (Content-Type text/html, body begins <!doctype html>) rather than the requested document —
+  a soft-404, not a real artifact. www.onland.ca returned HTTP 503 to every anonymous request.
+  www.teraview.ca, www.teranetmanitoba.ca, api.teranet.ca, developer.teranet.ca, docs.teranet.ca
+  and connect.teranet.ca returned 404 or did not resolve. No security.txt, no OIDC discovery,
+  no RFC 8414 authorization-server metadata, no RFC 9727 api-catalog, no ai-plugin.json.
+soft_404_warning: >-
+  Do not treat the 200 status codes below as hits. Teranet's WordPress installations serve the
+  site chrome with a 200 for unknown paths. Each was fetched and confirmed to be HTML, not JSON.
+hosts:
+- host: https://www.teranet.ca
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /openapi.json
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /swagger.json
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /llms.txt
+    status: 404
+- host: https://www.purview.ca
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    soft_404: true
+  - path: /openapi.json
+    status: 200
+    content_type: text/html
+    soft_404: true
+- host: https://www.onland.ca
+  documents:
+  - path: /.well-known/security.txt
+    status: 503
+  - path: /openapi.json
+    status: 503
+  - path: /llms.txt
+    status: 503
+- host: https://www.teraview.ca
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://www.teranetmanitoba.ca
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+unresolved_hosts:
+- host: api.teranet.ca
+  result: NXDOMAIN
+- host: developer.teranet.ca
+  result: NXDOMAIN
+- host: docs.teranet.ca
+  result: NXDOMAIN
+- host: connect.teranet.ca
+  result: NXDOMAIN
+- host: dev.teranet.ca
+  result: >-
+    Resolves but every request times out at the TCP layer (curl exit 28 after 15s). Appears to be an
+    internal/staging WordPress host that leaked into search-engine indexes; it is not a developer
+    portal and is not reachable from the public internet.
+documents_found: 0

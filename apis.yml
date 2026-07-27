@@ -32,6 +32,13 @@ tags:
 created: '2026-07-26'
 modified: '2026-07-26'
 specificationVersion: '0.19'
+enrichment:
+  round: '2026-07-26'
+  contract_discovery: >-
+    No machine-readable contract exists. OpenAPI/Swagger, GraphQL, MCP, AsyncAPI, WSDL and
+    /.well-known/ paths were probed against every Teranet host including the API-host-root pattern;
+    every HTTP 200 was a WordPress soft-404 HTML page. See well-known/teranet-well-known.yml and
+    conformance/teranet-conformance.yml for the full evidence.
 apis:
 - aid: teranet:teranet-connect
   name: Teranet Connect
@@ -54,7 +61,31 @@ apis:
     url: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
   - type: Website
     url: https://www.teranet.ca/registry-solutions/province-of-ontario/
+  - type: ProductSheet
+    url: https://www.teranet.ca/wp-content/uploads/2017/05/Teranet_Connect_Product_Sheet_EN_2.pdf
+  - type: Conventions
+    url: conventions/teranet-conventions.yml
+  - type: Authentication
+    url: authentication/teranet-authentication.yml
 common:
+- type: DomainSecurity
+  url: security/teranet-domain-security.yml
+- type: Authentication
+  url: authentication/teranet-authentication.yml
+- type: Conventions
+  url: conventions/teranet-conventions.yml
+- type: Conformance
+  url: conformance/teranet-conformance.yml
+- type: Lifecycle
+  url: lifecycle/teranet-lifecycle.yml
+- type: StatusPage
+  url: https://www.teraview.ca/en/system-status/
+- type: ChangeLog
+  url: changelog/teranet-changelog.yml
+- type: Sandbox
+  url: sandbox/teranet-sandbox.yml
+- type: LLMsTxt
+  url: llms/teranet-llms.txt
 - type: Website
   url: https://www.teranet.ca/
 - type: About
@@ -73,6 +104,28 @@ common:
   url: https://www.teranet.ca/legal-notice/
 - type: LinkedIn
   url: https://www.linkedin.com/company/teranet
+- type: Support
+  url: https://www.teraview.ca/en/help/
+- type: HelpCenter
+  url: https://teranetcommercialsolutions.zendesk.com/hc/en-ca
+- type: Pricing
+  url: https://www.teraview.ca/en/teraview-pricing/
+- type: SignUp
+  url: https://www.teraview.ca/en/become-a-teraview-user/
+- type: Login
+  url: https://www.teraviewereg.ca/TvApp/Login.jsp?language=en
+- type: GettingStarted
+  url: https://www.teraview.ca/en/teraview-training-environment/
+- type: Training
+  url: https://www.teraview.ca/en/teraview-video-guides/
+- type: SystemRequirements
+  url: https://www.teraview.ca/en/system-requirements/
+- type: Policies
+  url: https://www.teraview.ca/en/policies/
+- type: Accessibility
+  url: https://www.teranet.ca/accessibility/
+- type: Careers
+  url: https://www.teranet.ca/careers/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -1,0 +1,63 @@
+# Teranet
+
+> Teranet Inc. is the private operator of Ontario's Electronic Land Registration System (ELRS) and the POLARIS land records database under a long-running concession with the Government of Ontario, and the exclusive service provider for Manitoba's Land Titles System and Personal Property Registry. Founded in 1991, headquartered in Toronto and wholly owned by OMERS, Teranet holds the authoritative title, parcel, writ and instrument record for Ontario and resells it as commercial products. Its API posture is licensed access only: Teranet Connect is genuinely an API, but it is licensed to legal-software vendors through an account manager, with no public documentation, no published base URL, no sandbox for developers and no developer portal.
+
+## Access posture
+
+- Gate: partner-only. Access to every Teranet surface requires a commercial account established before any credential exists.
+- No self-serve signup, no API key console, no developer portal, no public base URL.
+- No OpenAPI, Swagger, WSDL, AsyncAPI, GraphQL schema or MCP server exists on any Teranet host.
+- Teranet's own support site states GeoWarehouse "does not offer an open Application Programming Interface (API) that can be accessed by the general public or utilized within the industry."
+- To obtain access: contact a Teranet account manager. info@teranet.ca, (416) 360-5263, 123 Front Street West, Suite 700, Toronto, Ontario M5J 2M2.
+
+## APIs
+
+- [Teranet Connect](https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/): XML and Web services access to Ontario's POLARIS land registration database and the Writs database, with standardized rules-based routing. Licensed to legal document creation and management software vendors.
+
+## Documented capabilities of Teranet Connect
+
+- Search properties in the POLARIS II database by name, property address and PIN and retrieve Parcel Registers.
+- Search the WRITS database by debtor name or execution number and retrieve Execution/Clearance Certificates and Writ Details Reports.
+- Search the POLARIS II database and retrieve instrument images.
+- Search the Map database by PIN and retrieve a property map file, including a list of adjacent properties.
+- Pay for search transactions using an existing Teraview Deposit Account.
+- Access Teraview Deposit Account administration.
+- Create, search and access dockets shareable between the licensed third-party application and Teraview.
+- Receive statutory products in their standard formats as well as in XML format.
+
+## Products
+
+- [Teraview](https://www.teraview.ca/): the electronic land registration client for Ontario conveyancing.
+- [OnLand](https://www.onland.ca/): online access to Ontario land registry documents.
+- [GeoWarehouse](https://www2.geowarehouse.ca/): property data and reports for real estate professionals.
+- [PurView](https://www.purview.ca/): property intelligence for lenders and appraisers.
+- [Teranet Manitoba](https://www.teranetmanitoba.ca/): Manitoba Land Titles and Personal Property Registry services.
+
+## Operations
+
+- [System Status](https://www.teraview.ca/en/system-status/): static status page covering twelve named subsystems.
+- [Hours of Service](https://www.teraview.ca/en/hours-of-service/): the registry runs on a scheduled availability window, not 24/7.
+- [News and Bulletins](https://www.teraview.ca/en/category/news/): dated change notices, numbered Bulletins and advance maintenance notices.
+- [Teraview Training Environment](https://www.teraview.ca/en/teraview-training-environment/): a UI training sandbox for the Teraview client, not a developer sandbox.
+- [Teraview Pricing](https://www.teraview.ca/en/teraview-pricing/)
+- [Become a Teraview User](https://www.teraview.ca/en/become-a-teraview-user/)
+- [Help](https://www.teraview.ca/en/help/)
+
+## Artifacts in this repository
+
+- apis.yml: the APIs.json index for Teranet.
+- authentication/teranet-authentication.yml: the account and RSA-token authentication profile.
+- conventions/teranet-conventions.yml: XML/Web services semantics, billing semantics, and what is undocumented.
+- conformance/teranet-conformance.yml: standards posture, all evidenced.
+- lifecycle/teranet-lifecycle.yml: status page, hours of service, absence of versioning and deprecation policy.
+- changelog/teranet-changelog.yml: recent dated bulletins and change notices.
+- sandbox/teranet-sandbox.yml: the Teraview training environment and its published credentials.
+- security/teranet-domain-security.yml: TLS, HSTS, DNSSEC, CAA, SPF and DMARC probe results.
+- well-known/teranet-well-known.yml: the negative /.well-known/ probe record, including soft-404 warnings.
+- review.yml: the API Evangelist review, including the full RESO posture finding.
+
+## Notes for agents
+
+- There is nothing here an agent can call. Every Teranet surface is behind a commercial licence and human account setup; treat Teranet as a data source to be contracted for, not integrated with.
+- Do not infer endpoints, operation names, parameters or error codes for Teranet Connect. None are published, and none appear anywhere in this repository.
+- Teranet Connect operations are billable against a Teraview Deposit Account and no retry or idempotency contract is published, so retry behaviour has a financial consequence and must be agreed with Teranet.

@@ -1,0 +1,118 @@
+generated: '2026-07-26'
+method: searched
+source: https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/
+supplementary_source: https://www.teranet.ca/wp-content/uploads/2017/05/Teranet_Connect_Product_Sheet_EN_2.pdf
+summary: >-
+  Teranet Connect is a document-oriented XML / Web services integration, not a resource-oriented
+  REST API. Everything below is drawn from the two public descriptions Teranet publishes — the
+  Teranet Connect product page and the Teranet Connect product sheet PDF. The cross-cutting
+  semantics an integrator actually needs (media types, envelope, error codes, retry and
+  idempotency behaviour, pagination, rate limits) are NOT published; they are distributed under
+  licence. This artifact records what is genuinely documented and marks the rest as undocumented
+  rather than guessing.
+style: xml-web-services
+rest: false
+graphql: false
+grpc: false
+transport:
+  protocol: Web services over HTTP(S)
+  interface: XML
+  routing: >-
+    "standardized rules-based routing of information" - Teranet's own phrasing for how a request is
+    dispatched across the POLARIS, Writs and Map back ends.
+  documented_verbatim: >-
+    "Teranet Connect provides secure interoperability between your application and the Ministry of
+    Government and Consumer Services POLARIS and the Ministry of the Attorney General Writs
+    databases, by utilizing XML and Web services interfaces as well as standardized rules-based
+    routing of information."
+  soap_or_rest: undocumented
+  wsdl_published: false
+media_types:
+  request: XML (exact content type undocumented)
+  response:
+  - XML
+  - statutory product standard formats
+  note: >-
+    "statutory products are returned in their standard formats, as well as in XML format" - the
+    registry's legal output documents (Parcel Register, Execution/Clearance Certificate, Writ
+    Details Report) come back in their prescribed statutory rendering alongside an XML
+    representation intended for form pre-population.
+  binary: >-
+    Instrument images and property map files are retrievable as binary artifacts; the encoding and
+    container format are not documented publicly.
+authentication:
+  see: authentication/teranet-authentication.yml
+  style: licensed account, not self-serve credentials
+authorization:
+  model: licence-scoped
+  note: >-
+    What a licensee may search and retrieve is set by the licence agreement and by statute, not by
+    a scope string. There is no OAuth scope surface.
+  see: null
+idempotency:
+  supported: undocumented
+  header: null
+  note: >-
+    No idempotency key, no retry contract and no de-duplication semantics are published. This
+    matters more than usual here because Teranet Connect operations are billable — each search
+    draws down a Teraview Deposit Account — so a blind retry has a financial consequence. An
+    integrator must obtain the retry contract from Teranet under licence. NO Idempotency pointer is
+    emitted in apis.yml because no idempotency contract is evidenced.
+pagination:
+  style: undocumented
+  params: []
+  response_fields: []
+field_expansion:
+  supported: undocumented
+metadata:
+  supported: undocumented
+request_tracing:
+  request_id_header: undocumented
+versioning:
+  scheme: none-published
+  see: lifecycle/teranet-lifecycle.yml
+error_envelope:
+  format: undocumented
+  rfc9457: false
+  note: No public error reference, error code registry or problem-details schema exists.
+rate_limiting:
+  documented: false
+  headers: []
+  note: >-
+    No rate-limit headers or quotas are published. The practical throttle is commercial rather than
+    technical - transaction volume is metered against the Teraview Deposit Account.
+billing_semantics:
+  metered: true
+  account: Teraview Deposit Account
+  operations:
+  - Pay for search transactions using existing Teraview Deposit Account.
+  - Access Teraview Deposit Account administration.
+  note: >-
+    Unusual and worth calling out: the deposit-account administration surface is exposed through
+    the same API as the search surface, so a licensed integration can both spend and inspect its
+    own balance.
+availability:
+  continuous: false
+  see: lifecycle/teranet-lifecycle.yml
+  note: >-
+    The registry runs on a published hours-of-service window rather than 24/7, so an integrator
+    must handle scheduled unavailability as a normal condition, not an incident.
+documented_capabilities:
+  note: >-
+    The eight capabilities Teranet publishes verbatim. These are capability statements, not
+    operation identifiers - Teranet publishes no operationIds, method names or endpoint paths.
+  capabilities:
+  - Search properties in the POLARIS II database by name, property address and PIN and retrieve Parcel Registers.
+  - Search the WRITS database by debtor name or execution number and retrieve Execution /Clearance Certificates and Writ Details Reports.
+  - Search the POLARIS II database and retrieve instrument images.
+  - Search the Map database by PIN and retrieve a property map file, including a list of adjacent properties.
+  - Pay for search transactions using existing Teraview Deposit Account.
+  - Access Teraview Deposit Account administration.
+  - Create, search and access dockets that can be shared by the licensed third party application as well as Teraview.
+  - Allow the application to use the search information more easily, as statutory products are returned in their standard formats, as well as in XML format.
+cross_links:
+  authentication: authentication/teranet-authentication.yml
+  lifecycle: lifecycle/teranet-lifecycle.yml
+  sandbox: sandbox/teranet-sandbox.yml
+  conformance: conformance/teranet-conformance.yml
+  changelog: changelog/teranet-changelog.yml

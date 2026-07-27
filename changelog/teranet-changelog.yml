@@ -1,0 +1,86 @@
+generated: '2026-07-26'
+method: searched
+source: https://www.teraview.ca/en/category/news/
+summary: >-
+  Teranet publishes a dated, chronological change and notice stream on the Teraview product site.
+  It is a product changelog, not an API changelog — entries describe registry feature changes,
+  statutory fee changes, sign-in changes and scheduled outages, each with an explicit effective
+  date. Entries are numbered as Bulletins (Bulletin No. YYYY-NN) when they change registry
+  behaviour that conveyancing software must follow, which makes the bulletin series the closest
+  thing Teranet publishes to a breaking-change notice for its integrators.
+scheme: dated-bulletins
+version_scheme: none
+current_version: null
+feed: null
+feed_note: No RSS/Atom feed, JSON changelog or per-release version tags are published.
+categories:
+- name: Bulletins
+  note: Numbered registry-behaviour changes (Bulletin No. YYYY-NN) with an effective date.
+- name: System maintenance
+  note: Advance notice of scheduled Teraview / Teranet eXpress outages.
+- name: Fee changes
+  note: Statutory and administrative fee updates (e.g. Toronto MLTT), with effective dates.
+entries:
+- date: '2026-07-20'
+  title: Enhancing your Teraview sign-in experience
+  type: change
+  breaking: false
+  highlights:
+  - Introduces email-based login for Teraview.
+  - Enhancements to Multi-Factor Authentication.
+- date: '2026-06-30'
+  title: 'Teraview will be unavailable on the following dates due to maintenance: July 11 and 12, 2026'
+  type: maintenance
+  breaking: false
+- date: '2026-04-13'
+  title: Map Search Improvements Coming Soon
+  type: change
+  breaking: false
+  effective: '2026-04-20'
+  highlights:
+  - Updates to road-name display and sourcing in the Search Map feature.
+- date: '2026-03-30'
+  title: New City of Toronto MLTT High Value Residential Property Tax Rates
+  type: fee-change
+  breaking: false
+  effective: '2026-04-01'
+  highlights:
+  - Revised graduated Municipal Land Transfer Tax rates for high-value residential property.
+- date: '2026-03-25'
+  title: TERAVIEW UNAVAILABLE March 31, 2026
+  type: maintenance
+  breaking: false
+  highlights:
+  - Scheduled downtime 6:00 p.m. to midnight.
+- date: '2026-01-20'
+  title: Bulletin No. 2026-02 - OnLand Plan Pre-Approval and Standardized Condominium Prefix
+  type: bulletin
+  breaking: false
+  effective: '2026-01-23'
+  highlights:
+  - Plan Pre-Approval Submission Form updated for condominium and subdivision plan types.
+- date: '2026-01-12'
+  title: MLTT Admin Fee Update
+  type: fee-change
+  breaking: false
+  effective: '2026-01-09'
+  highlights:
+  - Toronto MLTT administration fee set to $102.56 + HST ($115.89).
+- date: '2026-01-05'
+  title: Bulletin No. 2026-01 - Teraview Enhancements
+  type: bulletin
+  breaking: false
+  effective: '2026-01-12'
+  highlights:
+  - Return for Correction feature expanded.
+- date: '2026-01-05'
+  title: Teraview eNotifications Enhancements
+  type: change
+  breaking: false
+  effective: '2026-01-12'
+  highlights:
+  - Expanded eNotifications capabilities.
+window: >-
+  Recent window only (2026-01-05 through 2026-07-20, captured 2026-07-26). The live page at
+  https://www.teraview.ca/en/category/news/ is the source of truth; archives run back to at least
+  2018 at https://www.teraview.ca/en/2018/.

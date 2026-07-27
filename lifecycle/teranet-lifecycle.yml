@@ -1,0 +1,61 @@
+generated: '2026-07-26'
+method: searched
+source: https://www.teraview.ca/en/system-status/
+summary: >-
+  Teranet runs its operational-transparency surface on the Teraview product site rather than on a
+  developer portal. There is a real, human-readable system-status page covering twelve named
+  subsystems, a published hours-of-service schedule (the registry is deliberately not a 24/7
+  system), and dated maintenance notices posted in advance. There is no versioning policy, no
+  deprecation policy, no Sunset/Deprecation header support, and no published SLA or uptime target —
+  consistent with a licensed, account-managed integration where these terms live in the licence
+  agreement rather than in public documentation.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: >-
+    No public API versioning policy. Teranet Connect is licensed per-vendor and its interface
+    contract is distributed under agreement; no version identifiers appear on any public page.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No published deprecation or sunset policy for Teranet Connect or any Teranet product API.
+sla:
+  url: https://www.teraview.ca/en/hours-of-service/
+  uptime_target: null
+  note: >-
+    Not an uptime SLA. Teranet publishes an hours-of-service window instead — Teraview and PORTAS
+    PASS are available Monday to Thursday 4:00 a.m. to midnight, Friday 4:00 a.m. to 9:00 p.m.,
+    Saturday 9:00 a.m. to 6:00 p.m., and Sunday 9:00 a.m. to 9:00 p.m. (Eastern). Availability is a
+    scheduled window, not a continuous-service commitment.
+status_page: https://www.teraview.ca/en/system-status/
+status_page_detail:
+  type: static-page
+  live_dashboard: false
+  incident_history: false
+  subscribe: false
+  components:
+  - Electronic Registration
+  - Property Search
+  - Writs Search
+  - Teraview Login
+  - www.portaspass.ca access
+  - Upload schedules
+  - Reports
+  - Mapping
+  - Financial Systems
+  - Account Management
+  - Instrument Creation
+  - Messaging and Signing
+  note: >-
+    A statically maintained page showing a per-component working indicator and a single overall
+    statement ("There are no issues to report"). No incident history, no RSS/Atom feed, no
+    status-alert subscription, no machine-readable status JSON. Users with an unlisted issue are
+    directed to contact support.
+maintenance:
+  advance_notice: true
+  notice_channel: https://www.teraview.ca/en/category/news/
+  examples:
+  - 'Teraview unavailable July 11 and 12, 2026 (posted 2026-06-30)'
+  - 'Teraview unavailable March 31, 2026, 6 p.m. to midnight (posted 2026-03-25)'
+deprecated_operations: []
