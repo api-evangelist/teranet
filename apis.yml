@@ -16,6 +16,17 @@ description: >-
   and no developer portal; Teranet's own support site states plainly that GeoWarehouse has no open API.
   No RESO certification was found — Teranet is a land registry, not an MLS — and the public record it
   stewards is sold back rather than published as open data.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.teranet.ca/wp-content/uploads/2021/12/cropped-teranet_favicon_512_512-192x192.png
 tags:
 - Real-Estate
