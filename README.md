@@ -1,4 +1,4 @@
-# Teranet (teranet)
+# Teranet
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,69 +66,90 @@
 
 Teranet Inc. is the private operator of Ontario's Electronic Land Registration System (ELRS) and the POLARIS land records database under a long-running concession with the Government of Ontario, and is the exclusive service provider for Manitoba's Land Titles System and Personal Property Registry. Founded in 1991, headquartered in Toronto and wholly owned by OMERS, Teranet sits at the base of the Canadian property value chain: it holds the authoritative title, parcel, writ and instrument record and resells it as commercial products — Teraview, OnLand, Teranet eXpress, GeoWarehouse, PurView, Teranet Xchange, DataConnect/ValueProtect AVM, TeraIntelligence — plus the Teranet-National Bank House Price Index. Its API posture is licensed access only. Teranet Connect is genuinely described by Teranet as an API (XML and web services over POLARIS and the Writs database), but it is licensed to legal-software vendors through an account manager, with no public documentation, no published base URL, no self-serve signup and no developer portal; Teranet's own support site states plainly that GeoWarehouse has no open API. No RESO certification was found — Teranet is a land registry, not an MLS — and the public record it stewards is sold back rather than published as open data.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/teranet/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/teranet/refs/heads/main/apis.yml)
+**Areas:** Real Estate · Canada · Land Registry · Title · Conveyancing · Property Data · Valuation · AVM · PropTech · Government · Geospatial
 
-## Tags
+## Teranet on APIs.io
 
-- Real Estate
-- Canada
-- Land Registry
-- Title
-- Conveyancing
-- Property Data
-- Valuation
-- AVM
-- PropTech
-- Government
-- Geospatial
+Everything profiled for Teranet is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/teranet/](https://apis.io/providers/teranet/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2026-07-26
-- **Modified:** 2026-07-26
+- [Teranet Connect](https://apis.io/apis/teranet/teranet-connect/) — Teranet Connect is described by Teranet as an application programming interface providing secure access to Ontario's POLARIS land registration database and…
 
-## APIs
+### Published properties
 
-### Teranet Connect
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Teranet Connect is described by Teranet as an application programming interface providing secure access to Ontario's POLARIS land registration database and the Writs database, using XML and web services interfaces with rules-based routing. It lets legal document creation and management software vendors embed property search (by name, address or PIN), writ search by debtor name, instrument image retrieval and map data into their own applications. Access is licensed commercially through a Teranet account manager; no public technical documentation, base URL, sandbox or self-serve signup is published.
+#### Security (2)
 
-- **Human URL:** [https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/](https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/)
-- **Base URL:** not published
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Teranet Authentication](https://apis.io/security/teranet/teranet-authentication/)
+- [Teranet Domain Security](https://apis.io/security/teranet/teranet-domain-security/)
 
-- Land Registry
-- Title
-- Conveyancing
-- Ontario
-- Writs
+## Where to find this API
 
-#### Properties
-
-- [Documentation](https://www.teranet.ca/registry-solutions/province-of-ontario/teranet-connect/)
-- [Website](https://www.teranet.ca/registry-solutions/province-of-ontario/)
-
-## Access Posture
-
-- **Access gate:** partner-only — Teranet Connect is licensed to legal-software vendors through an account manager (info@teranet.ca), and every other data product is sold under a commercial data licence.
-- **RESO posture:** no RESO certification found; Teranet is a land registry operator, not an MLS, and no RESO Web API, Data Dictionary, OData `$metadata` or UPI reference appears on any Teranet property.
-- **Open data:** none. The Teranet-National Bank House Price Index publishes a free Composite 11 historical download, but under Terms of Use rather than an open licence.
-- **Machine-readable contracts:** none published. See `review.yml` for every URL probed and its HTTP status.
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.teranet.ca/)
-- [About](https://www.teranet.ca/about-teranet/)
-- [Contact](https://www.teranet.ca/contact-us/)
+- [Getting started](https://www.teraview.ca/en/teraview-training-environment/)
+- [Pricing](https://www.teraview.ca/en/teraview-pricing/)
+- [Sign up](https://www.teraview.ca/en/become-a-teraview-user/)
+- [Support](https://www.teraview.ca/en/help/)
 - [Blog](https://www.teranet.ca/insights/)
-- [Press Releases](https://www.teranet.ca/press-releases/)
-- [Terms of Service](https://www.teranet.ca/terms-conditions/)
-- [Privacy Policy](https://www.teranet.ca/privacy/)
-- [Legal Notice](https://www.teranet.ca/legal-notice/)
-- [LinkedIn](https://www.linkedin.com/company/teranet)
+- [Terms of service](https://www.teranet.ca/terms-conditions/)
+- [Privacy policy](https://www.teranet.ca/privacy/)
+- [Status](https://www.teraview.ca/en/system-status/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 25.2** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 65.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 23.7 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/teranet/](https://apis.io/providers/teranet/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Teranet: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/teranet/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
